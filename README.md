@@ -14,18 +14,23 @@ Currently the plugin supports one command: `get alarms` which will list all conf
 >me [9:53 PM] 
 >@nejlika: get alarms
 
->nejlika BOT [9:53 PM] 
+>nejlika BOT [9:53 PM]
+
 >DBService-dbserver-MySQLStatus: *OK*
+
 >server-CPU_Utilization-Critical: *OK*
+
 >server-StatusCheck-Failure: *OK*
+
 >other_server-CPU_Utilization: *OK*
+
 >other_server-CPU_Utilization-Critical: *OK*
 
 ### Configuration ###
 Configuration is possible through *rtmbot's* configuration file `rtmbot.conf`. There's currently three things that's configurable in this plugin:
 
 * `testing_channel`: A channel where the plugin can be more verbose without bothering normal users.
-* `alarm_channel`: The channel where the plugin should send a message whenever it discoveres a triggered alarm
+* `alarm_channel`: The channel where the plugin should send a message whenever it discovers a triggered alarm
 * `alarm_check_interval`: The time, in seconds, between alarm state checks
 
 Here's an example configuration, without the rest of the settings from rtmbot.conf: `cloudwatch: {bots_channel: D12345678, alarm_channel: D12345678, alarm_check_interval: 60}`
