@@ -46,8 +46,8 @@ def check_alarms():
     alarms = connection.describe_alarms()
     active_alarms = [a for a in alarms if a.state_value != 'OK']
     if len(active_alarms) > 0:
-        message = format_alarms(alarms)
-        outputs.append([BOTS_CHANNEL, message])
+        message = format_alarms(active_alarms)
+        outputs.append([BOTS_CHANNEL, '!channel:\n{}'.format(message)])
         if BOTS_CHANNEL != ALARM_CHANNEL:
             outputs.append([ALARM_CHANNEL, message])
     else:
